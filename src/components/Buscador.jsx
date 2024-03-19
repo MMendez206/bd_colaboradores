@@ -1,14 +1,19 @@
 const Buscador = ({ search, setSearch }) => {
+  const handleChange = (event) => {
+    const value = event.target.value
+    setSearch(value)
+  }
   return (
     <>
-      <form class='d-flex' role='search'>
+      <form className='d-flex' role='search'>
         <input
-          class='form-control me-2'
+          className='form-control me-2'
           type='search'
           placeholder='Buscar Colaborador'
           aria-label='Search'
+          value={search}
+          onChange={handleChange}
         />
-        <button class='btn btn-outline-success' type='submit'>Buscar</button>
       </form>
     </>
   )
